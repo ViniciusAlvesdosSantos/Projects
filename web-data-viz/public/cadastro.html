@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee&Finances|Registro</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+         <a href="index.html">
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                </svg>
+                <span>Voltar</span>
+            </div>
+        </a>
+        <a href="index.html">
+            <h1>Coffee & Finances</h1>
+        </a>
+    </header>
+    
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
+        </div>
+    </div>
+    <div class="signup-container">
+        <div class="image-section"></div>
+        <div class="form-section-register">
+        <h1>Registre-se</h1>
+        <form>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome_input" name="nome" placeholder="Nome">
+            <label for="email">Email</label>
+            <input type="email" id="email_input" name="email" required placeholder="Email">
+            <label for="password">Senha</label>
+            <input type="password" id="senha_input" name="password" required placeholder="Insira sua senha">
+            <label for="confirmPassword">Confirmar senha</label>
+            <input type="password" id="confirmacao_senha_input" name="confirmPassword" required placeholder="Digite sua senha novamente">
+            <button type="submit" class="sign-up-button">Registrar-se</button>
+        </form>
+        <p>Já tem uma conta? <a href="login.html" class="log-in-link">Login</a></p>
+    </div>
+    </div>
+    
+
+    <script>
+        document.querySelector('.sign-up-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            cadastrar();
+        });
+
+        function cadastrar() {
+            console.log('Entrei no cadastrar');
+            var nomeVar = document.getElementById("nome_input").value;
+            var emailVar = document.getElementById("email_input").value;
+            var senhaVar = document.getElementById("senha_input").value;
+            var confirmacaoSenhaVar = document.getElementById("confirmacao_senha_input").value;
+
+            // Verificando se há algum campo em branco ou se as senhas não coincidem
+            if (
+                nomeVar === "" ||
+                emailVar === "" ||
+                senhaVar === "" ||
+                confirmacaoSenhaVar === "" ||
+                senhaVar !== confirmacaoSenhaVar
+            ) {
+                document.getElementById("cardErro").style.display = "block";
+                document.getElementById("mensagem_erro").innerText = "Preencha todos os campos e certifique-se de que as senhas coincidem.";
+                setTimeout(sumirMensagem, 5000);
+                return false;
+            }
+
+            console.log('Acabou a validação');
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                }),
+            })
+            .then(function(resposta) {
+                console.log("Resposta: ", resposta);
+
+                if (resposta.ok) {
+                    document.getElementById("cardErro").style.display = "block";
+                    document.getElementById("mensagem_erro").innerText = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, 2000);
+                    limparFormulario();
+                } else {
+                    throw new Error("Houve um erro ao tentar realizar o cadastro!");
+                }
+            })
+            .catch(function(erro) {
+                console.log(`#ERRO: ${erro}`);
+                document.getElementById("cardErro").style.display = "block";
+                document.getElementById("mensagem_erro").innerText = erro.message;
+                setTimeout(sumirMensagem, 5000);
+            });
+
+            return false;
+        }
+
+        function sumirMensagem() {
+            document.getElementById("cardErro").style.display = "none";
+        }
+
+        function limparFormulario() {
+            document.getElementById("nome_input").value = "";
+            document.getElementById("email_input").value = "";
+            document.getElementById("senha_input").value = "";
+            document.getElementById("confirmacao_senha_input").value = "";
+        }
+    </script>
+</body>
+</html>
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inria Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    width: 80%;
+    
+}
+
+header a{
+    text-decoration: none;
+    color: #000000;
+}
+
+header a:hover{
+    color: #28a745;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-3px);
+}
+
+
+header .arrow{
+    grid-column: 1; 
+    grid-row: 1;
+    align-self: self-start;
+    justify-self: self-start;
+}
+
+header h1{
+    grid-column: 2; 
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+.signup-container {
+    display: flex;
+    height: 700px;
+    width: 80%;
+    max-width: 900px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-section {
+    flex: 2;
+    background-color: #ddd;
+    width: 100%;
+    height: 100%;
+    background-image: url(imagens/background_img_login.png);
+    background-size: cover;
+}
+
+
+
+.form-section-login, .form-section-register {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.sign-in-button, .sign-up-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.sign-in-button:hover {
+    background-color: #218838;
+}
+
+.forgot-link,
+.sign-up-link, .log-in-link{
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+.forgot-link:hover,
+.sign-up-link:hover, 
+.log-in-link:hover {
+    color: #218838;
+    text-decoration: underline;
+}
+
+p {
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+</style>
+

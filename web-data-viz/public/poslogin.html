@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee&Finances|Área do cliente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <nav class="navbar bg-body-tertiary fixed-top" style="background-color: #012017;" id="container">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand m-auto" href="#">Coffee & finances</a>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Coffee & Finances</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="../Pós login/index.html"><strong>Livros</strong> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quiz.html"><strong>Descubra seu nível de investidor</strong> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./kanban/index.html"><strong>Quadro KanBan</strong></a>
+                        </li>
+
+                    </ul>
+                    <div class="out">
+                        <a href="index.html ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5" />
+                            </svg>
+                            Sair
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="main">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="reviewContent"></div>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+
+            <img src="./imagens/livrosCarrosel/homemMaisRicoBabilonia.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">O homemais mais rico da babilônia</h5>
+                <p class="card-text">Clássico sobre gestão financeira, oferecendo lições atemporais de riqueza e sucesso
+                    através de parábolas antigas.</p>
+                <a href="#" class="btn btn-primary" id="homemMaisRico">Veja mais...</a>
+            </div>
+        </div>
+
+
+        <div class="card" style="width: 18rem;">
+            <img src="./imagens/livrosCarrosel/motivacao3.0.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Motivação 3.0</h5>
+                <p class="card-text">Explora a ciência da motivação, argumentando que a autonomia, a maestria e o
+                    propósito são os verdadeiros impulsionadores do desempenho.</p>
+                <a href="#" class="btn btn-primary" id="motivacao">Veja mais...</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./imagens/livrosCarrosel/o-poder-da-alta-performance.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">O poder da alta performance</h5>
+                <p class="card-text">Fornece estratégias práticas para aumentar a produtividade e atingir níveis
+                    elevados de desempenho pessoal e profissional.</p>
+                <a href="#" class="btn btn-primary" id="poderAltaPerformance">Veja mais...</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="./imagens/livrosCarrosel/paiRicoPaiPobre.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Pai rico Pai pobre</h5>
+                <p class="card-text">Comparação de mentalidades sobre dinheiro e investimentos entre duas figuras
+                    paternas, incentivando a inteligência financeira.</p>
+                <a href="#" class="btn btn-primary" id="paiRicoPaiPobre">Veja mais...</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./imagens/livrosCarrosel/poderEAltaPerf.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Poder e alta performance</h5>
+                <p class="card-text">Estratégias para alcançar níveis excepcionais de desempenho, baseadas em pesquisas
+                    sobre psicologia e produtividade.</p>
+                <a href="#" class="btn btn-primary" id="poderEAlta">Veja mais...</a>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="./imagens/livrosCarrosel/psicologiaFinanceira.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">A psicologia financeira</h5>
+                <p class="card-text">Examina como as emoções e o comportamento humano afetam as decisões financeiras e o
+                    sucesso no longo prazo.</p>
+                <a href="#" class="btn btn-primary" id="psicoFinanceira">Veja mais...</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./imagens/livrosCarrosel/scrum.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Scrum</h5>
+                <p class="card-text">Guia prático sobre o método Scrum para gestão de projetos, focado em eficiência,
+                    colaboração e adaptação rápida.</p>
+                <a href="#" class="btn btn-primary" id="scrum">Veja mais...</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./imagens/livrosCarrosel/segredosMenteMilionaria.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Os segredos da mente milionária</h5>
+                <p class="card-text">Desvenda como os pensamentos e crenças podem influenciar a riqueza e ensina hábitos
+                    financeiros para construir e manter riqueza.</p>
+                <a href="#" class="btn btn-primary" id="segredosMente">Veja mais...</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img src="./imagens/livrosCarrosel/quemPensaEnriquece.webp" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Quem pensa, enriquece</h5>
+                <p class="card-text">Explora princípios e filosofias para alcançar o sucesso financeiro e pessoal, com
+                    base em histórias de grandes empreendedores.</p>
+                <a href="#" class="btn btn-primary" id="quemPensaEnriquece">Veja mais...</a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="leftFooter">
+            <ul>
+                <li><a href="#">Home</a>
+                </li>
+                <li><a href="#">Sobre nós</a>
+                </li>
+                <li><a href="#">Quadro Kanban</a>
+                </li>
+            </ul>
+        </div>
+        <div class="middleFooter">
+            <p>Coffee & Finances</p>
+            <img src="./imagens/coffee-alt-solid-60.png" alt="Coffee">
+            <p>© 2024 Coffee & Finances</p>
+        </div>
+        <div class="rightFooter">
+            <div class="left">
+                <div class="social-item">
+                    <img src="./imagens/instagram-alt-logo-60.png" alt="Instagram">
+                    <a href="" class="leftText">Instagram</a>
+                </div>
+                <div class="social-item">
+                    <img src="./imagens/facebook-square-logo-60.png" alt="Facebook">
+                    <a href="" class="leftText">Facebook</a>
+                </div>
+                <div class="social-item">
+                    <img src="./imagens/linkedin-square-logo-60.png" alt="LinkedIn">
+                    <a href="" class="leftText">LinkedIn</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('homemMaisRico').addEventListener('click', () => {
+                const review = `
+        <div class="grid-container" id="homemMaisRico">
+            
+            <div class="book-cover">
+                <img src="./imagens/livrosCarrosel/homemMaisRicoBabilonia.webp" alt="">
+                <p><strong>O Homem Mais Rico da Babilônia</strong><br>Edição padrão, 4 agosto 2017 <br>
+                Edição Português  por George S Clason (Autor), Luiz Cavalcanti de M. Guerra (Tradutor)</p>
+            </div>
+            <div class="review">
+                <h2>O Homem Mais Rico da Babilônia: Lições de Riqueza e Sucesso</h2>
+                <p>⭐⭐⭐⭐</p>
+                <p>O livro conta a história de Arkad, um homem que se torna o mais rico da cidade de Babilônia. Ele compartilha suas lições financeiras com um grupo de amigos, ensinando conceitos importantes como economizar, investir e construir riqueza. <br><br>
+                
+                As parábolas abordam temas como a importância de pagar dívidas, economizar pelo menos 10% do que ganha, e investir em áreas que se conhece. <br> <br>
+
+                A mensagem central do livro é que o sucesso financeiro é possível para qualquer pessoa que siga princípios básicos de administração do dinheiro. Clason destaca que, mesmo que as parábolas sejam antigas, os princípios financeiros que elas ensinam ainda são aplicáveis nos dias de hoje
+
+                </p>
+            </div>
+        </div>
+        `;
+                const modal = document.getElementById('myModal');
+                const reviewContent = document.getElementById('reviewContent');
+                reviewContent.innerHTML = review;
+                modal.style.display = 'block';
+            })
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('motivacao').addEventListener('click', () => {
+                const review = `
+        <div class="grid-container" id="motivacao">
+            <div class="book-cover">
+                <img src="./imagens/livrosCarrosel/motivacao3.0.jpg" alt="motivacao3">
+                <p><strong>Motivação 3.0</strong><br>13 maio 2019<br>
+                Edição Português  por Daniel H. Pink (Autor), Ivo Korytowski (Tradutor)</p>
+            </div>
+            <div class="review">
+                <h2>Motivação 3.0: A surpreendente verdade sobre o que realmente nos motiva</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Muita gente acredita que a melhor maneira de motivar alguém é oferecer algum tipo de recompensa, como prêmios, promoções ou dinheiro. <br> <br>
+
+                Esta visão está errada, diz Daniel Pink. Segundo ele, o segredo da alta performance e da satisfação está ligado à necessidade essencialmente humana de aprender e criar coisas novas, ter autonomia e melhorar o mundo para nós e para os outros. <br> <br>
+
+                Com base em décadas de pesquisas científicas, Pink expõe neste livro o descompasso entre a ciência da motivação e as práticas corporativas, e explica como isso afeta todos os aspectos de nossa vida. <br> <br>
+
+                Examinando os três elementos da verdadeira motivação – autonomia, excelência e propósito –, o livro apresenta técnicas inteligentes e surpreendentes para colocar esses princípios em ação. <br><br>
+
+                Além disso, traz histórias de empresas que adotaram estratégias inovadoras para motivar seus funcionários e de empreendedores que vêm trilhando caminhos alternativos na busca da realização e do alto desempenho.</p>
+            </div>
+        </div>
+        `;
+                const modal = document.getElementById('myModal');
+                const reviewContent = document.getElementById('reviewContent');
+                reviewContent.innerHTML = review;
+                modal.style.display = 'block';
+            })
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('poderAltaPerformance').addEventListener('click', () => {
+                const review = `
+        <div class="grid-container" id="poderAltaPerformance">
+            <div class="book-cover">
+                <img src="./imagens/livrosCarrosel/o-poder-da-alta-performance.jpg" alt="motivacao3">
+                <p><strong>O poder da alta performance</strong><br>5 outubro 2018 <br>
+                Edição Português  por Brendon Burchard (Autor), Bruno Fiuza (Tradutor)</p>
+            </div>
+            <div class="review">
+                <h2>O poder da alta performance</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Por que o sucesso chega mais rápido para algumas pessoas? <br> Que práticas possibilitam altos níveis de sucesso? <br>Por que algumas pessoas bem-sucedidas são felizes nesse processo e outras não? <br> <br>
+                Depois de uma década como um dos coaches de alta performance mais renomados do mundo, Brendon Burchard revela os seis hábitos mais efetivos para o sucesso de longo prazo. Todos nós queremos alcançar a alta performance nas diversas áreas de nossas vidas. <br> <br> Mas como? Quais hábitos podem nos ajudar a ser bem-sucedidos, independentemente da idade, carreira, força e personalidade que temos? Tornar-se uma pessoa de alto rendimento tem relação direta com seis fatores: clareza, energia, necessidade, produtividade, influência e coragem. <br> 
+                Neste livro, Brendon Burchard ensina a arte e a ciência de como colocar em prática os hábitos de alta performance.</p>
+            </div>
+        </div>
+        `;
+                const modal = document.getElementById('myModal');
+                const reviewContent = document.getElementById('reviewContent');
+                reviewContent.innerHTML = review;
+                modal.style.display = 'block';
+            })
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('paiRicoPaiPobre').addEventListener('click', () => {
+                const review = `
+        <div class="grid-container" id="paiRicoPaiPobre">
+            <div class="book-cover">
+                <img src="./imagens/livrosCarrosel/paiRicoPaiPobre.webp" alt="motivacao3">
+                <p><strong>Pai Rico Pai Pobre</strong><br>6 julho 2017<br>
+                Edição Português  por Kiyosaki Robert T (Autor)</p>
+            </div>
+            <div class="review">
+                <h2>Pai Rico Pai Pobre</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>A escola prepara as crianças para o mundo real? Essa é a primeira pergunta com a qual o leitor se depara neste livro. O recado é ousado e direto: boa formação e notas altas não bastam para assegurar o sucesso de alguém. O mundo mudou; a maioria dos jovens tem cartão de crédito, antes mesmo de concluir os estudos, e nunca teve aula sobre dinheiro, investimentos, juros etc. Ou seja, eles vão para a escola, mas continuam financeiramente improficientes, despreparados para enfrentar um mundo que valoriza mais as despesas do que a poupança. <br> <br>
+
+                E como os pais podem ensinar aos filhos o que a escola relega? Essa é outra das muitas perguntas que o leitor encontra em Pai Rico, Pai Pobre. Nesse sentido, a proposta do autor é facilitar a tarefa dos pais. Quem entende de contabilidade deve esquecer seus conhecimentos acadêmicos, pois muitas das teorias expostas por Robert Kiyosaki contrariam os princípios contábeis comumente aceitos, e apresentam uma valiosa e moderna percepção do modo como se realizam os investimentos. <br> <br>
+
+                A sociedade sofre mudanças radicais e, talvez, de proporções maiores do que as ocorridas em séculos passados. Não existe bola de cristal, mas algo é certo: a perspectiva global de transformações transcende nossa realidade imediata. Aconteça o que acontecer, só existem duas alternativas: segurança ou independência financeira. E o objetivo de Pai Rico, Pai Pobre é instruir o leitor e despertar sua inteligência financeira e a de seus filhos. <br> <br>
+
+                “A principal razão pela qual as pessoas têm problemas financeiros é que passaram anos na escola, mas não aprenderam nada sobre dinheiro. O resultado é que elas aprendem a trabalhar por dinheiro… mas nunca a fazê-lo trabalhar para elas.” - Robert Kiyosaki.  <br> <br>
+                    </p>
+            </div>
+        </div>
+        `;
+                const modal = document.getElementById('myModal');
+                const reviewContent = document.getElementById('reviewContent');
+                reviewContent.innerHTML = review;
+                modal.style.display = 'block';
+            })
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('poderEAlta').addEventListener('click', () => {
+                const review = `
+        <div class="grid-container" id="poderEAlta">
+            <div class="book-cover">
+                <img src="./imagens/livrosCarrosel/poderEAltaPerf.webp" class="card-img-top" alt="...">
+                <p><strong>Poder e alta performance</strong><br>1 abril 2017<br>
+                Edição Português  por Paulo Vieira (Autor)</p>
+            </div>
+            <div class="review">
+                <h2>Poder e alta performance</h2>
+                <p>⭐⭐⭐⭐</p>
+                <p>“Mudanças profundas e substanciais acontecem rapidamente.” Ter uma vida melhor e ser bem-sucedido na vida pessoal e, ao mesmo tempo, na profissional é perfeitamente possível. <br> <br> 
+                    
+                No entanto, como fazer isso é a questão que aflige muitas pessoas, pois é difícil pôr as estratégias em prática. Com o objetivo de promover mudanças rápidas, profundas e permanentes no ser humano, Paulo Vieira oferece neste livro as ferramentas fundamentais para que o leitor tenha uma vida plena e assuma o controle do seu destino, tonando-se tudo aquilo para o que ele foi criado. <br> <br> 
+                
+                Baseado no Método CIS®, maior treinamento de inteligência emocional do mundo, O poder verdadeiro traz um texto simples e fluente, rico em exercícios, exemplos e casos reais, em que o leitor aprenderá a: Identificar o que está errado em sua vida; Acabar com a procrastinação; Sair da zona de conforto e ousar; Adotar a postura dos reis; Reproduzir modelos de excelência; Usar o poder das palavras; Estabelecer e realizar objetivos grandiosos; Criar uma missão de vida; Conquistar crenças fortalecedoras; Refazer laços e relacionamentos importantes. Comece já a ter a vida que você merece!</p>
+            </div>
+        </div>
+        `;
+                const modal = document.getElementById('myModal');
+                const reviewContent = document.getElementById('reviewContent');
+                reviewContent.innerHTML = review;
+                modal.style.display = 'block';
+            })
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('psicoFinanceira').addEventListener('click', () => {
+                const review = `
+        <div class="grid-container" id="psicoFinanceira">
+            <div class="book-cover">
+                <img src="./imagens/livrosCarrosel/psicologiaFinanceira.jpg" alt="motivacao3">
+                <p><strong>A psicologia financeira</strong><br>15 março 2021 <br>
+                Edição Português  por Morgan Housel (Autor), Clapp Roberta (Tradutor), Bruno Fiuza (Tradutor)</p>
+            </div>
+            <div class="review">
+                <h2>A psicologia financeira</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>O sucesso financeiro tem menos a ver com a sua inteligência e muito mais a ver com o seu comportamento. E a forma como alguém se comporta é uma coisa difícil de se ensinar, mesmo para pessoas bastante inteligentes. <br><br>
+
+                A maneira como lidamos com o dinheiro ― finanças pessoais, investimentos, decisões de negócios ― costuma ser explicada como um campo puramente matemático, no qual dados e fórmulas nos dizem o que fazer. A verdade, porém, é que grandes decisões monetárias não são tomadas diante de uma planilha, mas durante jantares com a família e reuniões com os colegas de trabalho. Além disso, cada uma delas é um reflexo da história pessoal e das dificuldades enfrentadas pelo indivíduo que as tomou.<br><br>
+
+                Abordando a gestão financeira de maneira inédita, Morgan Housel apresenta casos de sucessos e fracassos de investidores que demonstram a importância do fator psicológico no gerenciamento das finanças, oferecendo aprendizados para administrar e fazer o dinheiro render em busca do grande objetivo de todos nós: ser feliz.<br></p>
+            </div>
+        </div>
+        `;
+                const modal = document.getElementById('myModal');
+                const reviewContent = document.getElementById('reviewContent');
+                reviewContent.innerHTML = review;
+                modal.style.display = 'block';
+            })
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('scrum').addEventListener('click', () => {
+                const review = `
+        <div class="grid-container" id="scrum">
+            <div class="book-cover">
+                <img src="./imagens/livrosCarrosel/scrum.jpg" alt="scrum">
+                <p><strong>Scrum</strong><br>18 fevereiro 2019 <br>
+                    Edição Português  por Jeff Sutherland (Autor), J. J. Sutherland (Autor), Nina Lua (Tradutor)</p>
+            </div>
+            <div class="review">
+                <h2>Scrum</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>“Repleto de histórias empolgantes e exemplos reais. O método de gerenciamento de projetos conhecido como Scrum deve ser a ferramenta de produtividade mais largamente empregada entre as empresas de alta tecnologia. Jeff Sutherland tem sido brilhantemente bem-sucedido em sua missão de pôr esse recurso nas mãos de mais negócios em todo o mundo.” – Eric Ries, autor de A startup enxuta. <br> <br>
+
+
+                O mundo vem sofrendo um processo de mudança contínuo cada vez mais acelerado. Para quem acredita que deve haver uma maneira mais eficiente de fazer as coisas, Scrum é um livro instigante sobre o processo de liderança e gestão que está transformando a maneira como vivemos.<br><br>
+
+                Instituições que adotaram o método Scrum já registraram ganhos de produtividade de até 1.200%. É por causa dele que a Amazon pode acrescentar um novo recurso em seu site todos os dias, que o Red River Army Depot, no Texas, consegue lançar utilitários blindados 39 vezes mais rápido e que o FBI finalmente criou um enorme banco de dados de rastreamento de terroristas.<br><br>
+
+                Com base em insights de artes marciais, tomadas de decisão judicial, combate aéreo avançado, robótica e muitas outras disciplinas, o método Scrum é prático e fascinante.<br><br>
+
+                Mas a razão mais importante para ler este livro é que ele pode ajudar você a alcançar o que os outros consideram inatingível – seja inventando uma tecnologia pioneira, planejando um novo sistema educacional, viabilizando um caminho para ajudar os mais pobres ou mesmo estabelecendo os alicerces para a sua família prosperar.<br></p>
+            </div>
+        </div>
+        `;
+                const modal = document.getElementById('myModal');
+                const reviewContent = document.getElementById('reviewContent');
+                reviewContent.innerHTML = review;
+                modal.style.display = 'block';
+            })
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('segredosMente').addEventListener('click', () => {
+                const review = `
+        <div class="grid-container" id="segredosMente">
+            <div class="book-cover">
+                <img src="./imagens/livrosCarrosel/segredosMenteMilionaria.webp" alt="scrum">
+                <p><strong>Os segredos da mente milionária</strong><br>26 julho 2006 <br>
+                Edição Português  por T. Harv Eker (Autor), Pedro Jorgensen Junior (Tradutor)</p>
+            </div>
+            <div class="review">
+                <h2>Segredos da mente milionária</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Se as suas finanças andam na corda bamba, talvez esteja na hora de você refletir sobre o que T. Harv Eker chama de "o seu modelo de dinheiro" – um conjunto de crenças que cada um de nós alimenta desde a infância e que molda o nosso destino financeiro, quase sempre nos levando para uma situação difícil. <br><br>
+
+                Nesse livro, Eker mostra como substituir uma mentalidade destrutiva – que você talvez nem perceba que tem – pelos "arquivos de riqueza", 17 modos de pensar e agir que distinguem os ricos das demais pessoas. Alguns desses princípios fundamentais são:<br>
+
+                • Ou você controla o seu dinheiro ou ele controlará você.<br>
+
+                • O hábito de administrar as finanças é mais importante do que a quantidade de dinheiro que você tem.<br>
+
+                • A sua motivação para enriquecer é crucial: se ela possui uma raiz negativa, como o medo, a raiva ou a necessidade de provar algo a si mesmo, o dinheiro nunca lhe trará felicidade.<br>
+
+                • O segredo do sucesso não é tentar evitar os problemas nem se livrar deles, mas crescer pessoalmente para se tornar maior do que qualquer adversidade.<br>
+
+                • Os gastos excessivos têm pouco a ver com o que você está comprando e tudo a ver com a falta de satisfação na sua vida.<br>
+
+                O autor também ensina um método eficiente de administrar o dinheiro. Você aprenderá a estabelecer sua remuneração pelos resultados que apresenta e não pelas horas que trabalha. Além disso, saberá como aumentar o seu patrimônio líquido – a verdadeira medida da riqueza.<br>
+
+                A ideia é fazer o seu dinheiro trabalhar para você tanto quanto você trabalha para ele. Para isso, é necessário poupar e investir em vez de gastar. "Enriquecer não diz respeito somente a ficar rico em termos financeiros", diz Eker. "É mais do que isso: trata-se da pessoa que você se torna para alcançar esse objetivo."<br></p>
+            </div>
+        </div>
+        `;
+                const modal = document.getElementById('myModal');
+                const reviewContent = document.getElementById('reviewContent');
+                reviewContent.innerHTML = review;
+                modal.style.display = 'block';
+            })
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('quemPensaEnriquece').addEventListener('click', () => {
+                const review = `
+        <div class="grid-container" id="quemPensaEnriquece">
+            <div class="book-cover">
+                <img src="./imagens/livrosCarrosel/quemPensaEnriquece.webp" alt="scrum">
+                <p><strong>Quem pensa, enriquece</strong><br>9 novembro 2022<br>
+                Edição Português  por Napoleon Hill (Autor)</p>
+            </div>
+            <div class="review">
+                <h2>Quem pensa, enriquece</h2>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Quem Pensa Enriquece é o resultado de mais de duas décadas de estudo e análise minuciosa de indivíduos que alcançaram fortunas pessoais significativas. Napoleon Hill dedicou seu tempo ao estudo dos hábitos de 16 mil pessoas, incluindo 500 milionários e os homens mais ricos de sua época. A partir dessas pesquisas, ele identificou as 'leis' essenciais para a conquista do sucesso. <br><br>
+
+                Agora, esta obra influente está ainda mais acessível com o Guia de Estudos, que oferece insights adicionais, exercícios práticos e reflexões aprofundadas para ajudar você a aplicar os princípios em sua própria jornada.<br><br>
+
+                A obra afirma que o desejo, quando combinado com fé e persistência, tem o poder de levar um indivíduo a realizar feitos extraordinários, desde que ele consiga superar pensamentos negativos e manter um foco inabalável em seu objetivo. Descubra o segredo para o sucesso financeiro e pessoal com a edição especial do clássico atemporal: Quem Pensa Enriquece, agora acompanhado de um Guia de Estudos exclusivo.<br></p>
+            </div>
+        </div>
+        `;
+                const modal = document.getElementById('myModal');
+                const reviewContent = document.getElementById('reviewContent');
+                reviewContent.innerHTML = review;
+                modal.style.display = 'block';
+            })
+        });
+
+
+        // Fechar o modal quando o botão "close" é clicado
+        const span = document.getElementsByClassName('close')[0];
+        span.addEventListener('click', () => {
+            document.getElementById('myModal').style.display = 'none';
+        });
+
+        // Fechar o modal quando o usuário clica fora dele
+        window.addEventListener('click', (event) => {
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = 'none';
+            }
+        });
+        ;
+
+
+
+    </script>
+
+
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        .main {
+            margin-top: 80px;
+            align-self: center;
+            justify-self: center;
+            display: grid;
+            grid-template-columns: 16rem 16rem 16rem;
+            grid-template-rows: auto;
+            gap: 100px;
+
+        }
+
+        /* Estilos dos Cards */
+        .card {
+            background-color: #fafafa;
+            padding: 20px;
+            margin: 10px;
+            border: 5px solid #ffffff;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card a {
+            background-color: #00645E;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 10px 10px 15px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Estilos do Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            /* Remove rolagem */
+            background-color: rgba(0, 0, 0, 0.4);
+
+        }
+
+        .modal-content {
+            justify-content: flex-end;
+            align-items: flex-end;
+            background-color: #f7171700;
+            margin: 15% auto;
+            /* Centraliza verticalmente */
+            padding: 20px;
+            width: 80%;
+            max-height: calc(100vh - 30%);
+            /* Garante que o modal não ultrapasse a altura da tela */
+            border: none;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+
+        .grid-container {
+            display: grid;
+            align-self: center;
+            justify-self: center;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            height: 800px;
+            padding: 40px;
+            margin-top: 80px;
+            max-width: 80%;
+            background-color: #ffffff;
+            border-radius: 15px;
+        }
+
+        .book-cover {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .book-cover img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .card img {
+            border-radius: 10px;
+        }
+
+        .review {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review h2 {
+            margin-top: 0;
+        }
+
+        .carousel-indicators {
+            position: relative;
+            top: 20px;
+            justify-content: center;
+        }
+
+        .footer {
+            margin-top: 20px;
+            background-color: #00645E;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .leftFooter ul {
+            justify-content: start;
+            list-style: none;
+            padding: 0;
+        }
+
+        .leftFooter ul li {
+            margin: 5px 0;
+        }
+
+        .leftFooter ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .middleFooter {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .middleFooter img {
+            width: 50px;
+            height: 50px;
+            margin: 10px 0;
+        }
+
+        .rightFooter {
+            display: grid;
+            align-self: end;
+            justify-content: end;
+            margin-right: 100px;
+            margin-bottom: 80px;
+        }
+
+        .rightFooter .left {
+            display: grid;
+            gap: 20px;
+        }
+
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-item img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .leftText {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .leftText:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</body>
+
+</html>
