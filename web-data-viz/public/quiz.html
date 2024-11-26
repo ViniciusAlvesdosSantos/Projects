@@ -19,7 +19,7 @@
             font-family: 'Inria Sans', sans-serif;
         }
 
-        body{
+        body {
             display: flex;
             background-image: url(./imagens/Design\ sem\ nome.png);
             background-size: cover;
@@ -30,17 +30,18 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 150px;
-            margin-right: 40%;
+            margin-top: 100px;
+            margin-right: 20%;
+            margin-left: 25%;
             width: 500px;
             border-radius: 10px;
             min-height: 400px;
             max-height: 820px;
-            gap: 30px;
+            gap: 10px;
             background-color: aliceblue;
         }
 
-        .container button{
+        .container button {
             border-radius: 1rem;
             max-height: 50px;
             margin-top: 20px;
@@ -50,12 +51,12 @@
             background-color: #00645E;
         }
 
-        header{
+        header {
             margin-top: 100px;
             margin-left: 100px;
         }
-        
-        .out a{
+
+        .out a {
             gap: 13px;
             color: #00645E;
             display: flex;
@@ -63,58 +64,93 @@
             justify-content: center;
         }
 
-        .out a:hover{
+        .out a:hover {
             color: #28a745;
             transition: all 0.3s ease-in-out;
             transform: translateY(-3px);
         }
 
+        .kpis{
+            display: grid;
+            gap: 5px;
+            grid-template-columns: 1fr 1fr 1fr;
+            min-height: 100px;
+            max-height: 200px;
+            border: 2px solid #fAFAFA;
+            margin-bottom: 2rem;
+            border: 5px solid #ffffff;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        #indicador1, #indicador2, #indicador3{
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #indicador1:hover, #indicador2:hover, #indicador3:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 10px 10px 15px rgba(0, 0, 0, 0.8);
+        }
+        
+        
     </style>
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
     <nav class="navbar bg-body-tertiary fixed-top" style="background-color: #012017;" id="container">
         <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand m-auto" href="#">Coffee & finances</a>
-          
-          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Coffee & Finances</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand m-auto" href="#">Coffee & finances</a>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Coffee & Finances</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="poslogin.html"><strong>Livros</strong>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quiz.html"><strong>Descubra seu nível de investidor</strong> </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./kanban/index.html"><strong>Quadro KanBan</strong></a>
+                        </li>
+
+                    </ul>
+
+                    
+                </div>
             </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="poslogin.html"><strong>Livros</strong> </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="quiz.html"><strong>Descubra seu nível de investidor</strong> </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./kanban/index.html"><strong>Quadro KanBan</strong></a>
-                  </li>
-               
-              </ul>
-              
-              
-            </div>
-          </div>
         </div>
     </nav>
     <header>
         <div class="out">
             <a href="poslogin.html" style="text-decoration: none; ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
-                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
                 </svg>
                 Voltar
             </a>
-          </div>
+        </div>
     </header>
 
     <div class="container">
@@ -126,7 +162,7 @@
                 <p>1. Você prefere investimentos que não tenham risco de perda?</p>
                 <input type="radio" name="q1" value="1"> Sim <br>
                 <input type="radio" name="q1" value="0"> Não <br>
-                
+
                 <button type="button" onclick="func1()">Próximo</button>
             </div>
             <div class="question" id="alt2" style="display: none;">
@@ -145,30 +181,56 @@
                 <p>4. Você está disposto a assumir altos riscos em busca de grandes retornos?</p>
                 <input type="radio" name="q4" value="4"> Sim <br>
                 <input type="radio" name="q4" value="0"> Não <br>
-                <button type="button" onclick="func4(); calcularPerfil()">Qual meu perfil de investidor?</button>
+                <button type="button" onclick="calcularPerfil(); func4()">Qual meu perfil de investidor?</button>
             </div>
-
+            
+            
         </form>
 
-        <div id="resultado" style="display: none;">
-            Seu perfil de investidor é: <span id="perfil"></span>,<br>
-            e aqui está uma sugestão de carteira de investimentos
+        <div id="resultado" style="display: none; gap: 10px;">
+            <b>Seu perfil de investidor é: <span id="perfilUsuario"></span>,<br>
+            e aqui está uma sugestão de carteira de investimentos</b>
+            <div class="kpis">
+                <div id="indicador1"></div>
+                <div id="indicador2"></div>
+                <div id="indicador3"></div>
+            </div>
+
         </div>
+
 
         <canvas id="graficoCarteira" width="400" height="400" style="display: none;"></canvas>
     </div>
+
+
+
+
     <script>
+        const indicador1 = document.getElementById('indicador1')
+        const indicador2 = document.getElementById('indicador2')
+        const indicador3 = document.getElementById('indicador3')
+
         const quest1 = document.getElementById('alt1')
+
         const q1 = document.getElementsByName('q1')
+
         const quest2 = document.getElementById('alt2')
+
         const q2 = document.getElementsByName('q2')
+
         const quest3 = document.getElementById('alt3')
+
         const q3 = document.getElementsByName('q3')
+
         const quest4 = document.getElementById('alt4')
+
         const q4 = document.getElementsByName('q4')
-        const buttonProfile = document.getElementById('lookProfile');
-        const resultado = document.getElementById('resultado');
-        const graficoCarteira = document.getElementById('graficoCarteira');
+
+        const buttonProfile = document.getElementById('lookProfile')
+
+        const resultado = document.getElementById('resultado')
+
+        const graficoCarteira = document.getElementById('graficoCarteira')
 
         function func1() {
             var preenchido = false
@@ -235,70 +297,92 @@
             }
         }
 
+
+
+        var data = []
         function calcularPerfil() {
+
             let pontuacaoTotal = 0;
             const form = document.getElementById('quizForm');
             const formData = new FormData(form);
 
-            for (let value of formData.values()) {
+            for (var value of formData.values()) {
                 pontuacaoTotal += parseInt(value);
             }
 
-            let perfil;
-            if (pontuacaoTotal <= 1) {
-                perfil = "Perfil Muito Conservador";
-            } else if (pontuacaoTotal <= 5) {
-                perfil = "Perfil Conservador";
-            } else if (pontuacaoTotal <= 9) {
-                perfil = "Perfil Moderado";
-            } else {
-                perfil = "Perfil Arrojado";
+            var perfil
+
+
+            function exibirGrafico(perfil) {
+                const ctx = graficoCarteira.getContext('2d');
+                if (pontuacaoTotal <= 1) {
+                    perfil = "Perfil Muito Conservador";
+                } else if (pontuacaoTotal <= 5) {
+                    perfil = "Perfil Conservador";
+                } else if (pontuacaoTotal <= 9) {
+                    perfil = "Perfil Moderado";
+
+                } else {
+                    perfil = "Perfil Arrojado";
+                }
+
+                perfilUsuario.innerHTML = perfil
+
+                if (perfil === "Perfil Muito Conservador") {
+                    data = [10, 10, 80]
+                    indicador1.innerHTML = `Sua carteira de Bolsa de valores & Criptomoedas é de <br><b> ${data[0]} % da sua carteira</b><br> `
+                    indicador2.innerHTML = `Sua carteira de Fundos imobiliários é <br> <b>${data[1]} % da sua carteira</b> <br>`
+                    indicador3.innerHTML = `Sua carteira de CDB é de <br><span><b>${data[2]} % da sua carteira</b></span>`
+
+                } else if (perfil === "Perfil Conservador") {
+                    data = [10, 30, 60]
+                    indicador1.innerHTML = `Sua carteira de Bolsa de valores & Criptomoedas é de <br><b> ${data[0]} % da sua carteira</b><br> `
+                    indicador2.innerHTML = `Sua carteira de Fundos imobiliários é <br> <b>${data[1]} % da sua carteira</b> <br>`
+                    indicador3.innerHTML = `Sua carteira de CDB é de <br><span><b>${data[2]} % da sua carteira</b></span>`
+                } else if (perfil === "Perfil Moderado") {
+                    data = [30, 30, 40]
+                    indicador1.innerHTML = `Sua carteira de Bolsa de valores & Criptomoedas é de <br><b> ${data[0]} % da sua carteira</b><br> `
+                    indicador2.innerHTML = `Sua carteira de Fundos imobiliários é <br> <b>${data[1]} % da sua carteira</b> <br>`
+                    indicador3.innerHTML = `Sua carteira de CDB é de <br><span><b>${data[2]} % da sua carteira</b></span>`
+                } else {
+                    data = [80, 10, 10]
+                    indicador1.innerHTML = `Sua carteira de Bolsa de valores & Criptomoedas é de <br><b> ${data[0]} % da sua carteira</b><br> `
+                    indicador2.innerHTML = `Sua carteira de Fundos imobiliários é <br> <b>${data[1]} % da sua carteira</b> <br>`
+                    indicador3.innerHTML = `Sua carteira de CDB é de <br><span><b>${data[2]} % da sua carteira</b></span>`
+                }
+
+
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Bolsa de valores & Criptomoedas', 'Fundos imobiliários', 'CDB'],
+                        datasets: [{
+                            label: 'Carteira de Investimentos',
+                            data: data,
+                            backgroundColor: [
+                                'rgba(144, 238, 144, 1)',
+                                '#327B7B',
+                                '#00645E'
+                            ],
+                            border: [
+                                'none'
+                            ]
+
+                        }]
+                    },
+                    options: {
+                        responsive: true
+                    }
+                });
             }
 
-            document.getElementById('perfil').textContent = perfil;
-            resultado.style.display = 'block';
-            graficoCarteira.style.display = 'block';
+
+
+            resultado.style.display = 'block'
+            graficoCarteira.style.display = 'block'
             exibirGrafico(perfil);
         }
-
-        function exibirGrafico(perfil) {
-            const ctx = graficoCarteira.getContext('2d');
-
-            let data;
-            if (perfil === "Perfil Muito Conservador") {
-                data = [10, 10, 80]
-            } else if (perfil === "Perfil Conservador") {
-                data = [10, 30, 60]
-            } else if (perfil === "Perfil Moderado") {
-                data = [30, 30, 40]
-            } else {
-                data = [80, 10, 10]
-            }
-
-            new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: ['Bolsa de valores & Criptomoedas', 'Fundos imobiliários', 'CDB'],
-                    datasets: [{
-                        label: 'Carteira de Investimentos',
-                        data: data,
-                        backgroundColor: [
-                            'rgba(144, 238, 144, 1)',
-                            '#327B7B',
-                            '#00645E'
-                        ],
-                        border:[
-                            'none'
-                        ]
-                        
-                    }]
-                },
-                options: {
-                    responsive: true
-                }
-            });
-        }
     </script>
-        </body>
+</body>
 
 </html>
