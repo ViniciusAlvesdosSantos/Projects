@@ -24,7 +24,8 @@
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand m-auto" href="#">Coffee & finances</a>
+            <a class="navbar-brand m-end" href="#">Coffee & finances</a>
+            <span class="offcanvas-end" id="nomeUsuario">Ola </span>
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
@@ -47,7 +48,7 @@
 
                     </ul>
                     <div class="out">
-                        <a href="index.html ">
+                        <a href="index.html " onclick="limparSectionStorage()">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -198,7 +199,11 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script>
+        function limparSectionStorage(){
+            sessionStorage.NOME_USUARIO = ``
+        }
         document.addEventListener('DOMContentLoaded', () => {
+            
             document.getElementById('homemMaisRico').addEventListener('click', () => {
                 const review = `
         <div class="grid-container" id="homemMaisRico">
@@ -229,6 +234,7 @@
         });
 
         document.addEventListener('DOMContentLoaded', () => {
+            nomeUsuario.innerHTML=`Olá ${sessionStorage.NOME_USUARIO}`
             document.getElementById('motivacao').addEventListener('click', () => {
                 const review = `
         <div class="grid-container" id="motivacao">
@@ -481,6 +487,11 @@
             }
         });
         ;
+
+        const nomeUsuario = document.getElementById('nomeUsuario')
+        function addNameUser(){
+            nomeUsuario += sessionStorage.ID_USUARIO
+        }
 
 
 
